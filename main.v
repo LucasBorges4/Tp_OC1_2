@@ -104,3 +104,21 @@ output [31:0] Output;
 
 assign Out = Input << 1;
 endmodule 
+
+module Immediate_Generation(Input,Output)
+ input [11:0] Input;
+ output reg[31:0] Output;
+always @(Input) begin
+    // Extract the left-most bit (MSB)
+    reg left_most_bit = Input[11];
+
+    // Fill the remaining bits with the left-most bit
+    if (left_most_bit) begin
+        Output = { {20{1'b1}}, Input[11:0] };
+    end else begin
+        Output = { {20{1'b0}}, Input[11:0] };
+    end
+end
+
+endmodule
+
