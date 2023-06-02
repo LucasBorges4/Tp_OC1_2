@@ -1,6 +1,7 @@
-module Instruction_Mem(PC, Instruction, Control, Read_Register_1, Read_Register_2, Write_Register);
+module Instruction_Mem(PC, Instruction, clock, Control, Read_Register_1, Read_Register_2, Write_Register);
     input [31:0]PC;
     input [31:0]Instruction;
+    input clock;
 
     output [6:0] Control;
     output [19:15] Read_Register_1;
@@ -14,7 +15,7 @@ module Instruction_Mem(PC, Instruction, Control, Read_Register_1, Read_Register_
     reg [11:7] write_register;
     reg [3:0] AluControl;
 
-    always @(*) begin
+    always @(posedge clock) begin
         control = Instruction[6:0];
         read_register_1 = Instruction[19:15];
         read_register_2 = Instruction[24:20];
