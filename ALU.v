@@ -17,7 +17,7 @@ module ALU(Clock, Control, Input1, Input2, Out, Zero);
 			6: Out <= Input1 - Input2; //SUB
 			7: Out <= Input1 < Input2 ? 1 : 0; //BEQ?
 			12: Out <= ~(Input1 | Input2); //NOR
-			default: Out <= 0; 
+			default: Out <= 42; 
 		endcase
 
 	end
