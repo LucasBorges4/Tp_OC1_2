@@ -9,8 +9,8 @@ module Register(Clock,Read_Register1, Read_Register2, Write_Register, Write_Data
 	//reg write_data;
 	reg [31:0] Registradores [31:0];
 	always@(posedge Clock)begin
-		if (RegWrite == 1)begin //Se RegWrite for verdadeiro,alterar registrador com os dados a serem escritos
-		Registradores[Write_Register] = WriteData;
+		if (Write_Register == 1)begin //Se Write_Register for verdadeiro,alterar registrador com os dados a serem escritos
+		Registradores[Write_Register] = Write_Data;
 		end
 	end
 
