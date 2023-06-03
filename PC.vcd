@@ -1,0 +1,32 @@
+$date
+	Sat Jun  3 16:37:19 2023
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module top_module $end
+$var wire 1 ! Clock $end
+$var wire 32 " PCin [31:0] $end
+$var wire 1 # Reset $end
+$var wire 32 $ PCout [31:0] $end
+$var reg 1 % Out_signal $end
+$scope module PC_inst $end
+$var wire 1 ! Clock $end
+$var wire 32 & PCin [31:0] $end
+$var reg 32 ' PCout [31:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+bx '
+bz &
+x%
+bx $
+z#
+bz "
+z!
+$end

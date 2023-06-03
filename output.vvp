@@ -1,0 +1,47 @@
+#! /usr/bin/vvp
+:ivl_version "11.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+S_0x5631e4a16990 .scope module, "top_module" "top_module" 2 7;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "Clock";
+    .port_info 1 /INPUT 1 "Reset";
+    .port_info 2 /OUTPUT 1 "Out_signal";
+o0x7f0bfc1ee018 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5631e4a3a010_0 .net "Clock", 0 0, o0x7f0bfc1ee018;  0 drivers
+v0x5631e4a3a0e0_0 .var "Out_signal", 0 0;
+o0x7f0bfc1ee048 .functor BUFZ 32, C4<zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz>; HiZ drive
+v0x5631e4a3a180_0 .net "PCin", 31 0, o0x7f0bfc1ee048;  0 drivers
+v0x5631e4a3a280_0 .net "PCout", 31 0, v0x5631e49f2c00_0;  1 drivers
+o0x7f0bfc1ee168 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5631e4a3a350_0 .net "Reset", 0 0, o0x7f0bfc1ee168;  0 drivers
+S_0x5631e4a2a1e0 .scope module, "PC_inst" "PC" 2 12, 3 3 0, S_0x5631e4a16990;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "Clock";
+    .port_info 1 /INPUT 32 "PCin";
+    .port_info 2 /OUTPUT 32 "PCout";
+v0x5631e49f2370_0 .net "Clock", 0 0, o0x7f0bfc1ee018;  alias, 0 drivers
+v0x5631e49f27f0_0 .net "PCin", 31 0, o0x7f0bfc1ee048;  alias, 0 drivers
+v0x5631e49f2c00_0 .var "PCout", 31 0;
+    .scope S_0x5631e4a2a1e0;
+T_0 ;
+    %vpi_call 3 9 "$dumpfile", "PC.vcd" {0 0 0};
+    %vpi_call 3 10 "$dumpvars" {0 0 0};
+    %end;
+    .thread T_0;
+    .scope S_0x5631e4a16990;
+T_1 ;
+    %vpi_call 2 17 "$display", "Ol\303\241, mundo!" {0 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "top_module.v";
+    "./PC.v";
