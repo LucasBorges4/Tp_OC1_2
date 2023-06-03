@@ -1,6 +1,8 @@
-module PC(PCin, PCout, PC_Change);
+/*Program Counter / Memoria de Instrução*/
+
+module PC(Clock , PCin, PCout, PC_Change);
     input [31:0] PCin;
-    input [1:0] PC_Change;
+    input PC_Change, Clock;
     output reg [31:0] PCout;
 
     always @(*) begin
