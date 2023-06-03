@@ -15,8 +15,8 @@ module Register(Clock,Read_Register1, Read_Register2, Write_Register, Write_Data
 	end
 
 	always@(negedge Clock) begin 
-		ReadData1 = Register[RS1];
-		ReadData2 = Register[RS2];
+		Read_Data1 = Registradores[Read_Data1];
+		Read_Data2 = Registradores[Read_Data2];
 	/*Retornar o resultado das saídas*/
 	end
 
