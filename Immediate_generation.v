@@ -12,3 +12,12 @@ module Immediate_Generation(Input,Output);
     end
 
 endmodule
+
+module Immediate_Generation_Possible_Solution(Input,Output);
+    input [11:0] Input,
+    output reg [31:0] Output,
+    always @(*) begin
+        Output = {Input[11], Input[11], Input[11], Input[11], Input[11], Input[11], Input[11], Input[11], Input[11], Input[11], Input[11], Input[11], Input[11], Input[11], Input[11], Input[11], Input[11], Input[11], Input[11], Input[11], Input};
+    end
+    
+endmodule
