@@ -7,8 +7,27 @@ module Data_Mem(Clock , Address, WriteData, ReadData);
     output reg [31:0] PCout;
     
 	
-	initial begin
-		$dumpfile("PC.vcd");
+	
+endmodule
+
+module Data_Mem_Possible_Solution(Clock,Address,WriteData,WriteEnable,ReadData);
+ input Clock,WriteEnable;           
+ input [31:0] Address;
+ input [31:0] WriteData;  
+ output reg [31:0] ReadData;
+ reg [31:0] memory [0:1023];
+
+always @(posedge Clock) begin
+    if (WriteEnable) 
+        memory[Address] <= WriteData;  
+end
+
+always @(posedge Clock) begin   
+    if(!WriteEnable)
+        ReadData = memory[Address];
+end
+initial begin
+		$dumpfile("Data_Mem.vcd");
 		$dumpvars;
 	end
 
