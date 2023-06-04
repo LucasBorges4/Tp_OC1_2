@@ -10,7 +10,7 @@ module Add (
 endmodule
 
 
-model Add_GPTSolution(Input1,Input2,Soma,Overflow);
+module Add_GPTSolution(Input1,Input2,Soma,Overflow);
 input[31:0] Input1,Input2;
 output [31:0] Soma;
 output reg [1:0] Overflow;
