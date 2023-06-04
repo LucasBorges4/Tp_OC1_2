@@ -1,7 +1,8 @@
 /*Incompleto*/
 module Register(Clock,Read_Register1, Read_Register2, Write_Register, Write_Data, Read_Data1, Read_Data2);
 	input wire Clock;
-	input wire [4:0] Read_Register1, Read_Register2,Write_Register;
+	input wire Write_Register;
+	input wire [31:0] Read_Register1, Read_Register2;
 	input wire [31:0] Write_Data;
 	output reg [31:0] Read_Data1, Read_Data2; //Incompleto
 
@@ -10,11 +11,7 @@ module Register(Clock,Read_Register1, Read_Register2, Write_Register, Write_Data
 	reg [31:0] Registradores [0:31];
 
 	always@(posedge Clock)begin
-<<<<<<< HEAD
-		if (Write_Register == 1) begin //Se RegWrite for verdadeiro,alterar registrador com os dados a serem escritos
-=======
-		if (Write_Register == 1)begin //Se Write_Register for verdadeiro,alterar registrador com os dados a serem escritos
->>>>>>> refs/remotes/origin/main
+		if (Write_Register == 1'b1)begin //Se Write_Register for verdadeiro,alterar registrador com os dados a serem escritos
 		Registradores[Write_Register] = Write_Data;
 		end
 	end
