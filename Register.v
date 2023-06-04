@@ -7,7 +7,7 @@ module Register(Clock,Read_Register1, Read_Register2, Write_Register, Write_Data
 
 	//reg read_register1, read_register2, write_register;
 	//reg write_data;
-	reg [31:0] Registradores [31:0];
+	reg [31:0] Registradores [0:31];
 
 	always@(posedge Clock)begin
 <<<<<<< HEAD
