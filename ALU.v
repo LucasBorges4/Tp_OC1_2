@@ -1,8 +1,7 @@
-module ALU(Clock, Control, Input1, Input2, Out, Zero);
+module ALU(Control, Input1, Input2, Out, Zero);
 	
 	input [3:0] Control;
 	input [31:0] Input1,Input2;
-	input Clock;
 
 	output reg [31:0] Out;
 

@@ -1,8 +1,8 @@
 `include "Tp_OC1_2/PC.v"
 
-module PC_Change(Clock , PCin, PCout, PC_Change);
+module PC_Change(PCin, PCout, PC_Change);
     input [31:0] PCin;
-    input PC_Change, Clock;
+    input PC_Change;
     output reg [31:0] PCout;
 
     always @(*) begin
@@ -13,7 +13,7 @@ module PC_Change(Clock , PCin, PCout, PC_Change);
     end
 
     initial begin
-        $dumpfile("PC.vcd");
+        $dumpfile("PC_Change.vcd");
         $dumpvars;
     end
 

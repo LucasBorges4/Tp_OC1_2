@@ -10,8 +10,8 @@ module Data_Mem(Clock , Address, WriteData, ReadData);
 	
 endmodule
 
-module Data_Mem_Possible_Solution(Clock,Address,WriteData,WriteEnable,ReadData);
- input Clock,WriteEnable;           
+module Data_Mem_Possible_Solution(Clock,Address,WriteData,WriteEnable,MemRead);
+ input Clock,WriteEnable,MemRead;           
  input [31:0] Address;
  input [31:0] WriteData;  
  output reg [31:0] ReadData;
@@ -23,8 +23,12 @@ always @(posedge Clock) begin
 end
 
 always @(posedge Clock) begin   
-    if(!WriteEnable)
+    if(!WriteEnable)begin
         ReadData = memory[Address];
+    end
+    else if(MemRead) begin
+        Read_Data <= memory[Address];
+    end   
 end
 initial begin
 		$dumpfile("Data_Mem.vcd");
