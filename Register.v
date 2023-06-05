@@ -1,7 +1,8 @@
 /*Incompleto*/
 module Register(Clock,Read_Register1, Read_Register2, Write_Register, Write_Data, Read_Data1, Read_Data2);
 	input wire Clock;
-	input wire [4:0] Read_Register1, Read_Register2,Write_Register;
+	input wire Write_Register;
+	input wire [31:0] Read_Register1, Read_Register2;
 	input wire [31:0] Write_Data;
 	output reg [31:0] Read_Data1, Read_Data2; //Incompleto
 
@@ -15,7 +16,7 @@ module Register(Clock,Read_Register1, Read_Register2, Write_Register, Write_Data
 		end
 	end
 
-	always@(negedge Clock) begin 
+	always@(posedge Clock) begin 
 		Read_Data1 = Registradores[Read_Register1];
 		Read_Data2 = Registradores[Read_Register2];
 	/*Retornar o resultado das saídas*/
