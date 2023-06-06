@@ -48,7 +48,7 @@ PC_Change Somador_PC1(
 PC_Change Somador_PC2(
    .PCIn(PCin),
    .PCout(Sum),
-   .PC_Change(False)
+	.PC_Change(True)
    
 );
 ALU ALU_Outcome( 
