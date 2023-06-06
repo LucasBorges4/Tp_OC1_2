@@ -5,7 +5,7 @@
 `include "Control.v"
 `include "Data_Memory.v"
 `include "Immediate_generation.v"
-`include "Instruction_mem.v"
+`include "instruction_mem.v"
 `include "MUX.v"
 `include "Register.v"
 `include "PC.v"
@@ -14,7 +14,7 @@
 module top_module (Clock, Reset,PCout,Instruct,Result);
 wire [31:0] PCin;
 wire Branch, MemRead, MemtoReg, MemWrite, ALUSrc, RegWrite, Zero, Branch_Out;
-input wire Clock, reset;
+input wire Clock, Reset;
 output wire [31:0]PCout; 
 output wire [31:0]Instruct;
 wire [31:0]ReadData1, ReadData2, WriteData2; 
@@ -31,29 +31,30 @@ wire [31:0]Sum, Num1, Num2;
 
 reg True = 1'b1;
 reg False = 1'b0;
- PC pc( 
+
+PC pc( 
 	.PCin(MUX1),
-	.clk(Clock),
+	.Clock(Clock),
 	.PCout(PCout)
 );
 
 PC_Change Somador_PC1(
-   .PCIn(PCin),
+   .PCin(PCin),
    .PCout(Sum),
    .PC_Change(False)
    
 );
 
 PC_Change Somador_PC2(
-   .PCIn(PCin),
+   .PCin(PCin),
    .PCout(Sum),
 	.PC_Change(True)
    
 );
 ALU ALU_Outcome( 
-	.Number1(ReadData1),
-	.Number2(MUX2),
-	.ALUOp(ALUOp),
+	.Control(ALUOp),
+	.Input1(ReadData1),
+	.Input2(MUX2),
 	.Out(Result),
 	.Zero(Zero)
 );
@@ -107,7 +108,7 @@ Data_Mem DM(
 	.Clock(Clock), 
 	.WriteEnable(MemWrite), 
 	.MemRead(MemRead),
-	.ReadData(ReadData),
+	.ReadData(ReadData)
 );
 
 Immediate_Generation Bigger_Imm(

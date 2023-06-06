@@ -41,7 +41,6 @@
 //		default: Control <= 3; //Ilegal
 //	endcase
 //endmodule
-
 module ALUControl(Operation, Funct_Code, Control);
     input [1:0] Operation;
     input [6:0] Funct_Code;
