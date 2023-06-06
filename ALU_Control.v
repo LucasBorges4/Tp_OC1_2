@@ -1,4 +1,4 @@
-module Old_ALUControl(Operation,Funct_Code,Control); //Recebe ALUOP, e o opcode, retorna controle
+/*module Old_ALUControl(Operation,Funct_Code,Control); //Recebe ALUOP, e o opcode, retorna controle
 	input [1:0] Operation;
 	input [6:0] Opcode;
 	output reg[3:0] Control;
@@ -41,7 +41,7 @@ module Old_ALUControl(Operation,Funct_Code,Control); //Recebe ALUOP, e o opcode,
 		default: Control <= 3; //Ilegal
 	endcase
 endmodule
-
+*/
 module ALUControl(Operation, Funct_Code, Control);
     input [1:0] Operation;
     input [6:0] Funct_Code;

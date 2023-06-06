@@ -1,4 +1,4 @@
-`include "Tp_OC1_2/PC.v"
+`include "PC.v"
 
 module PC_Change(PCin, PCout, PC_Change);
     input [31:0] PCin;

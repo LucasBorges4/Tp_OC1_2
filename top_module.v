@@ -5,7 +5,7 @@
 `include "Control.v"
 `include "Data_Memory.v"
 `include "Immediate_generation.v"
-`include "Instruction_mem.v"
+`include "instruction_mem.v"
 `include "MUX.v"
 `include "Register.v"
 `include "PC.v"
