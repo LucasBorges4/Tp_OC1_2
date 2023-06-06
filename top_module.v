@@ -9,6 +9,7 @@
 `include "MUX.v"
 `include "Register.v"
 `include "PC.v"
+`include "PC_Change.v"
 
 module top_module (Clock, Reset,PCout,Instruct,Result);
 wire [31:0] PCin;
