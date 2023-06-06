@@ -1,3 +1,4 @@
+/*
 module Old_Instruction_Mem(Clock, PC, Instruction, Control, Read_Register_1, Read_Register_2, Write_Register);
     input [31:0]PC;
     input [31:0]Instruction;
@@ -35,7 +36,7 @@ module Old_Instruction_Mem(Clock, PC, Instruction, Control, Read_Register_1, Rea
 
 endmodule
 
-module Instruction_Mem(Clock, PC, Instruction, Control, Read_Register_1, Read_Register_2, Write_Register);
+module Old_2_Instruction_Mem(Clock, PC, Instruction, Control, Read_Register_1, Read_Register_2, Write_Register);
     input [31:0] PC;
     input Clock;
 
@@ -70,3 +71,20 @@ module Instruction_Mem(Clock, PC, Instruction, Control, Read_Register_1, Read_Re
     end
 
 endmodule
+*/
+module Instruction_Memory(
+     Instruction_Add, Instruction
+);
+input wire [31:0]Instruction_Add;
+output reg [31:0]Instruction;
+
+reg [31:0]Memory[31:0];
+
+initial begin
+        $readmemb("TP_OC1_2//instructions.txt",Memory, 0, 31);
+end
+  always @ (Instruction_Add) begin
+        Instruction = Memory[Instruction_Add>>2];
+    end
+
+endmodule 

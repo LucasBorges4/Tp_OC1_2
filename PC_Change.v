@@ -1,5 +1,3 @@
-`include "Tp_OC1_2/PC.v"
-
 module PC_Change(PCin, PCout, PC_Change);
     input [31:0] PCin;
     input PC_Change;
@@ -12,9 +10,6 @@ module PC_Change(PCin, PCout, PC_Change);
         endcase
     end
 
-    initial begin
-        $dumpfile("PC_Change.vcd");
-        $dumpvars;
-    end
+   
 
 endmodule

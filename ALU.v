@@ -1,3 +1,4 @@
+/*
 module Old_ALU(Control, Input1, Input2, Out, Zero);
 	
 	input [3:0] Control;
@@ -22,8 +23,7 @@ module Old_ALU(Control, Input1, Input2, Out, Zero);
 	end
 
 endmodule
-
-
+*/
 module ALU(
     input wire [3:0] Control,
     input wire [31:0] Input1,

@@ -3,8 +3,8 @@ module Control(Clock, Instruction, Branch, MemRead, MemToReg, ALUOp, MemWrite, A
     input [6:0] Instruction;
     input [1:0] Clock;
 
-    output wire Branch, MemRead, MemToReg;
-    output wire [1:0] ALUOp, MemWrite, ALUSrc, RegWrite;
+    output wire Branch, MemRead, MemToReg, MemWrite, ALUSrc, RegWrite;
+    output wire [1:0] ALUOp;
     
     reg [8:0] control;
     

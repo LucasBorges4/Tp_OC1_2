@@ -1,3 +1,4 @@
+/*
 module Old_Data_Mem(Clock , Address, WriteData, ReadData);
     input Address;
     input WriteData;
@@ -9,8 +10,8 @@ module Old_Data_Mem(Clock , Address, WriteData, ReadData);
 	
 	
 endmodule
-
-module Data_Mem(Clock,Address,WriteData,WriteEnable,MemRead);
+*/
+module Data_Mem(Clock,Address,WriteData,WriteEnable,MemRead,ReadData);
  input Clock,WriteEnable,MemRead;           
  input [31:0] Address;
  input [31:0] WriteData;  
@@ -27,12 +28,12 @@ always @(posedge Clock) begin
         ReadData = memory[Address];
     end
     else if(MemRead) begin
-        Read_Data <= memory[Address];
+        ReadData <= memory[Address];
     end   
 end
-initial begin
-		$dumpfile("Data_Mem.vcd");
-		$dumpvars;
-	end
+//initial begin
+//		$dumpfile("Data_Mem.vcd");
+//		$dumpvars;
+//	end
 
 endmodule
