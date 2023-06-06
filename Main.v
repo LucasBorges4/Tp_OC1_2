@@ -14,7 +14,7 @@ begin
 
 	$dumpfile("main.vcd");
     $dumpvars();
-    clk = 0;
+    Clock = 0;
     #1000 $finish;
 
 end
