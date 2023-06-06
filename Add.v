@@ -13,7 +13,6 @@ endmodule
 module Add(Input1,Input2,Soma);
 input[31:0] Input1,Input2;
 output [31:0] Soma;
-output reg [1:0] Overflow;
 always @* begin
 Soma = Input1 + Input2;
 end

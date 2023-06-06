@@ -134,7 +134,7 @@ ALUControl ALU_Controller(
 
 Add A1(
     .Input1(PCout), 
-	.Input2(64'd4),
+	.Input2(32'd4),
     .Soma(Out1) 
 );
 
