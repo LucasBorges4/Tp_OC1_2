@@ -141,6 +141,10 @@ Add A2(
 	.y(imm_gen<<1), 
     .soma(Out2) 
 );
+	initial begin
+		$display("Olá, mundo!");
+	end
+	
 endmodule 
 
 
