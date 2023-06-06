@@ -10,18 +10,16 @@
 `include "Register.v"
 `include "PC.v"
 
-module top_module (Clock, Reset,PCout,Instruction,Result);
+module top_module (Clock, Reset,PCout,Instruct,Result);
 wire [31:0] PCin;
 wire Branch, MemRead, MemtoReg, MemWrite, ALUSrc, RegWrite, Zero, Branch_Out;
 input wire Clock, reset;
 output wire [31:0]PCout; 
-output wire [31:0]Instruction;
+output wire [31:0]Instruct;
 wire [31:0]ReadData1, ReadData2, WriteData2; 
 output wire [31:0]Result;
 wire [6:0]Opcode; 
-wire [4:0]WriteRegister; 
-wire [2:0]Funct3; 
-wire [6:0]Funct7;
+wire [4:0]WriteRegister;
 wire [31:0]MUX1, MUX2, MUX3; 
 wire [31:0]Read_Data; 
 wire [31:0]imm_gen; 
@@ -62,9 +60,9 @@ Register Regs(
     .Clock(Clock), 
 	.Write_Register(RegWrite),
     .Write_Data(MUX3), 
-	.Read_Register1(Instruction[19:15]), 
-	.Read_Register2(Instruction[24:20]), 
-	.WriteRegister(Instruction[11:7]),
+	.Read_Register1(Instruct[19:15]), 
+	.Read_Register2(Instruct[24:20]), 
+	.WriteRegister(Instruct[11:7]),
     .Read_Data1(ReadData1), 
 	.Read_Data2(ReadData2)
 );
@@ -98,7 +96,7 @@ MUX Mux_Exit(
 
 Instruction_Memory IM(
 	.Inst_Address(PCout),
-	.Instruction(Instruction)
+	.Instruction(Instruct)
 );
 
 Data_Memory DM(
@@ -111,12 +109,12 @@ Data_Memory DM(
 );
 
 Imm_Gen Bigger_Imm(
-    .Input(Instruction),
+    .Input(Instruct),
     .Output(imm_gen)
 );
 
 Control Controller(
-	.Instruction(opcode),
+	.Instruction(Opcode),
 	.Branch(Branch), 
 	.MemRead(MemRead), 
 	.MemtoReg(MemtoReg), 
@@ -128,7 +126,7 @@ Control Controller(
 
 ALU_Control ALU_Controller(
 	.Operation(ALUOp),
-	.Funct_Code({Instruction[30], Instruction[14:12]}), 
+	.Funct_Code({Instruct[30], Instruct[14:12]}), 
 	.Control(Operation)
 );
 
