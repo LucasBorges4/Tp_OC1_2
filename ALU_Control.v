@@ -1,4 +1,4 @@
-module ALUControl(Operation,Funct_Code,Control); //Recebe ALUOP, e o opcode, retorna controle
+module Old_ALUControl(Operation,Funct_Code,Control); //Recebe ALUOP, e o opcode, retorna controle
 	input [1:0] Operation;
 	input [6:0] Opcode;
 	output reg[3:0] Control;
@@ -42,7 +42,7 @@ module ALUControl(Operation,Funct_Code,Control); //Recebe ALUOP, e o opcode, ret
 	endcase
 endmodule
 
-module ALUControl_GPTSolution(Operation, Funct_Code, Control);
+module ALUControl(Operation, Funct_Code, Control);
     input [1:0] Operation;
     input [6:0] Funct_Code;
     output reg [3:0] Control;

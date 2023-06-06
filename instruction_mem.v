@@ -1,4 +1,4 @@
-module Instruction_Mem(Clock, PC, Instruction, Control, Read_Register_1, Read_Register_2, Write_Register);
+module Old_Instruction_Mem(Clock, PC, Instruction, Control, Read_Register_1, Read_Register_2, Write_Register);
     input [31:0]PC;
     input [31:0]Instruction;
     input Clock;
@@ -35,7 +35,7 @@ module Instruction_Mem(Clock, PC, Instruction, Control, Read_Register_1, Read_Re
 
 endmodule
 
-module Instruction_Mem_GPTSolution(Clock, PC, Instruction, Control, Read_Register_1, Read_Register_2, Write_Register);
+module Instruction_Mem(Clock, PC, Instruction, Control, Read_Register_1, Read_Register_2, Write_Register);
     input [31:0] PC;
     input Clock;
 

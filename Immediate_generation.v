@@ -1,4 +1,4 @@
-module Immediate_Generation(Input,Output);
+module Old_Immediate_Generation(Input,Output);
     input [11:0] Input;
     output reg[31:0] Output;
     always @(Input) begin
@@ -13,7 +13,7 @@ module Immediate_Generation(Input,Output);
 
 endmodule
 
-module Immediate_Generation_Possible_Solution(Input,Output);
+module Immediate_Generation(Input,Output);
     input [11:0] Input,
     output reg [31:0] Output,
     always @(*) begin

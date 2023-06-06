@@ -1,4 +1,4 @@
-module ALU(Control, Input1, Input2, Out, Zero);
+module Old_ALU(Control, Input1, Input2, Out, Zero);
 	
 	input [3:0] Control;
 	input [31:0] Input1,Input2;
@@ -24,7 +24,7 @@ module ALU(Control, Input1, Input2, Out, Zero);
 endmodule
 
 
-module ALU_GPTSolution(
+module ALU(
     input wire [3:0] Control,
     input wire [31:0] Input1,
     input wire [31:0] Input2,

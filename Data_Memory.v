@@ -1,4 +1,4 @@
-module Data_Mem(Clock , Address, WriteData, ReadData);
+module Old_Data_Mem(Clock , Address, WriteData, ReadData);
     input Address;
     input WriteData;
     input ReadData;
@@ -10,7 +10,7 @@ module Data_Mem(Clock , Address, WriteData, ReadData);
 	
 endmodule
 
-module Data_Mem_Possible_Solution(Clock,Address,WriteData,WriteEnable,MemRead);
+module Data_Mem(Clock,Address,WriteData,WriteEnable,MemRead);
  input Clock,WriteEnable,MemRead;           
  input [31:0] Address;
  input [31:0] WriteData;  
