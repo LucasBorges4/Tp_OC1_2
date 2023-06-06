@@ -107,7 +107,7 @@ Data_Mem DM(
 	.Clock(Clock), 
 	.WriteEnable(MemWrite), 
 	.MemRead(MemRead),
-	.ReadData(ReadData),
+	.ReadData(ReadData)
 );
 
 Immediate_Generation Bigger_Imm(
