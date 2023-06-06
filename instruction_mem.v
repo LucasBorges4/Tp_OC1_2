@@ -35,24 +35,6 @@ module Instruction_Mem(Clock, PC, Instruction, Control, Read_Register_1, Read_Re
 
 endmodule
 
-<<<<<<< HEAD
-module Instruction_Memory(
-     Inst_Address, Instruction
-);
-input wire [31:0]Inst_Address;
-    output reg [31:0]Instruction;
-
-reg [31:0]Mem[31:0];
-
-initial begin
-        $readmemb("instrucoes.txt",Mem);
-end
-  always @ (Inst_Address) begin
-        Instruction = Mem[Inst_Address>>2];
-    end
-
-endmodule 
-=======
 module Instruction_Mem_GPTSolution(Clock, PC, Instruction, Control, Read_Register_1, Read_Register_2, Write_Register);
     input [31:0] PC;
     input Clock;
@@ -88,4 +70,3 @@ module Instruction_Mem_GPTSolution(Clock, PC, Instruction, Control, Read_Registe
     end
 
 endmodule
->>>>>>> 50ab7e9e9e41da42278de24d2dd89c5d9e334631
