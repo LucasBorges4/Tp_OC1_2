@@ -132,15 +132,15 @@ ALU_Control ALU_Controller(
 );
 
 Add A1(
-    .x(PCout), 
-	.y(64'd4),
-    .soma(Out1) 
+    .Input1(PCout), 
+	.Input2(64'd4),
+    .Soma(Out1) 
 );
 
 Add A2(
-    .x(PCout), 
-	.y(imm_gen<<1), 
-    .soma(Out2) 
+    .Input1(PCout), 
+	.Input2(imm_gen<<1), 
+    .Soma(Out2) 
 );
 	initial begin
 		$display("Olá, mundo!");

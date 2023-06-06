@@ -1,4 +1,4 @@
-module Add (
+module Old_Add (
 	x, y, soma, //overflow
 );
     input [31:0] x, y;
@@ -10,13 +10,12 @@ module Add (
 endmodule
 
 
-module Add_GPTSolution(Input1,Input2,Soma,Overflow);
+module Add(Input1,Input2,Soma);
 input[31:0] Input1,Input2;
 output [31:0] Soma;
 output reg [1:0] Overflow;
 always @* begin
 Soma = Input1 + Input2;
-Overflow = (Soma > 2**31-1);
 end
 endmodule
 
