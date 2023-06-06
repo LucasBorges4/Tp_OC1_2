@@ -10,9 +10,8 @@
 `include "Register.v"
 `include "PC.v"
 
-module top_module (Clock, Reset, Out_signal,PCout,Instruction,Result);
+module top_module (Clock, Reset,PCout,Instruction,Result);
 wire [31:0] PCin;
-output reg Out_signal;
 wire Branch, MemRead, MemtoReg, MemWrite, ALUSrc, RegWrite, Zero, Branch_Out;
 input wire Clock, reset;
 output wire [31:0]PCout; 
