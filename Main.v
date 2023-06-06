@@ -8,19 +8,23 @@ wire [31:0]Instruction;
 top_module tm( 
     .Clock(Clock), .Reset(Reset), .Result(Result), .Instruct(Instruction), .PCout(PCOut)
 );
-	
+
+always begin
+	#10 Clock = ~ Clock;
+end
+		
 initial
 begin
 
-	//$dumpfile("main.vcd");
-    //$dumpvars();
+	$dumpfile("main.vcd");
+    $dumpvars(0,main);
     Clock = 0;
-    #100000 $finish;
+    
+	
+    #10000 $finish;
+    
 
 end
 	
-always begin
-	#5 Clock = ~ Clock;
-end
-	
+
 endmodule

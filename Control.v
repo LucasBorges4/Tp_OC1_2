@@ -1,7 +1,6 @@
-module Control(Clock, Instruction, Branch, MemRead, MemToReg, ALUOp, MemWrite, ALUSrc, RegWrite);
+module Control(Instruction, Branch, MemRead, MemToReg, ALUOp, MemWrite, ALUSrc, RegWrite);
     
     input [6:0] Instruction;
-    input [1:0] Clock;
 
     output wire Branch, MemRead, MemToReg, MemWrite, ALUSrc, RegWrite;
     output wire [1:0] ALUOp;
@@ -10,7 +9,7 @@ module Control(Clock, Instruction, Branch, MemRead, MemToReg, ALUOp, MemWrite, A
     
     assign {ALUSrc, MemtoReg, RegWrite, MemRead, MemWrite, Branch, Aluop} = control;
     
-    always @(posedge Clock)
+always@(*)
     begin
     case(Instruction)
         7'b0110011 : control <= 9'b001000010; // R

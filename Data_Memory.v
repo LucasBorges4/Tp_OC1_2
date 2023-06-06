@@ -17,6 +17,19 @@ module Data_Mem(Clock,Address,WriteData,WriteEnable,MemRead,ReadData);
  input [31:0] WriteData;  
  output reg [31:0] ReadData;
  reg [31:0] memory [0:1023];
+ integer index;
+initial begin
+  for(index=0; index < 32; index = index +1) begin
+		memory[index] <= 0;
+	end
+end
+
+always@(posedge Clock) begin
+	
+		for(index=0; index < 32; index = index +1) begin
+		$display ("Memory[%0d] = %0b", index, memory[index]);
+		end
+	end
 
 always @(posedge Clock) begin
     if (WriteEnable) 
