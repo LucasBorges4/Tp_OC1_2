@@ -24,7 +24,8 @@ wire [4:0]WriteRegister;
 wire [31:0]MUX1, MUX2, MUX3; 
 wire [31:0]Read_Data; 
 wire [31:0]imm_gen; 
-wire [1:0]ALUOp; wire [3:0]Operation; 
+wire [1:0]ALUOp; 
+wire [3:0]Operation; 
 wire [31:0]Out1,Out2;
 wire [31:0]Sum, Num1, Num2;
 
@@ -95,12 +96,12 @@ MUX Mux_Exit(
     .Out(MUX3)
 );
 
-Instruction_Memory IM(
+Instruction_Mem IM(
 	.Inst_Address(PCout),
 	.Instruction(Instruct)
 );
 
-Data_Memory DM(
+Data_Mem DM(
 	.Address(Result), 
 	.WriteData(ReadData2),
 	.Clock(Clock), 
@@ -109,7 +110,7 @@ Data_Memory DM(
 	.ReadData(ReadData),
 );
 
-Imm_Gen Bigger_Imm(
+Immediate_Generation Bigger_Imm(
     .Input(Instruct),
     .Output(imm_gen)
 );
@@ -125,7 +126,7 @@ Control Controller(
 	.ALUOp(ALUOp)
 );
 
-ALU_Control ALU_Controller(
+ALUControl ALU_Controller(
 	.Operation(ALUOp),
 	.Funct_Code({Instruct[30], Instruct[14:12]}), 
 	.Control(Operation)
