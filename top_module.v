@@ -76,21 +76,21 @@ Branch Branch_Control(
 	.Out(Branch_Out)
 );
 
-mux Mux_PC( //mux branch
+MUX Mux_PC( 
     .A(Out1), 
 	.B(Out2), 
 	.S(Branch_Out), 
     .Out(MUX1)
 );
 
-mux Mux_ALU(
+MUX Mux_ALU(
     .A(ReadData2), 
 	.B(imm_gen), 
 	.S(ALUSrc),
     .Out(MUX2)
 );
 
-mux Mux_Exit( //mux datamemory
+MUX Mux_Exit(
     .A(Read_Data), 
 	.B(Result), 
 	.S(MemtoReg),
