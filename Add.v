@@ -17,7 +17,4 @@ always @* begin
 Soma = Input1 + Input2;
 end
 endmodule
-
     //assign overflow = (x[31] == y[31]) && (x[31] != y[31]);
-
-endmodule
