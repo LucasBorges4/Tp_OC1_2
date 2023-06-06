@@ -139,7 +139,7 @@ Add A1(
     .soma(Out1) 
 );
 
-ad A2(
+Add A2(
     .x(PCout), 
 	.y(imm_gen<<1), 
     .soma(Out2) 
