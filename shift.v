@@ -1,6 +1,6 @@
 module Shift(Input,Output);
     input [31:0] Input;
-    output [31:0] Output;
+    output wire [31:0] Output;
 
     assign Out = Input << 1;
     
