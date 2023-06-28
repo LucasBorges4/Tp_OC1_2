@@ -6,7 +6,7 @@ wire [31:0]Result, PCOut;
 wire [31:0]Instruction;
 
 top_module tm( 
-    .Clock(Clock), .Reset(Reset),.Exit(Exit));
+    .Clock(Clock), .Reset(Reset));
 
 always begin
 	#5 Clock = ~ Clock;
@@ -20,6 +20,7 @@ begin
 	$dumpfile("main.vcd");
     $dumpvars(0,main);
     Clock = 0;
+    Exit=0;
     
 	
     #2000 $finish;

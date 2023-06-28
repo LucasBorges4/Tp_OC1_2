@@ -11,11 +11,11 @@
 `include "Tp_OC1_2//PC_Change.v"
 `include "Tp_OC1_2//shift.v"
 
-module top_module (Clock, Reset,Exit); //Modulo principa
+module top_module (Clock, Reset); //Modulo principa
 
 /*Instanciacoes */
-input wire Clock, Reset,Exit;
-wire Branch;
+input wire Clock, Reset;
+wire Branch,Exit;
 reg [31:0] PCin,Read_Data,WriteData2,MUX1, MUX2, MUX3,Out1,Out2, InputA, InputB;
 wire MemRead, MemtoReg, MemWrite, ALUSrc, RegWrite, Zero, Branch_Out;
 wire [31:0] Out_Put_Shift,PC_Saida,ReadData1, ReadData2,ReadData3;
@@ -63,15 +63,18 @@ reg False = 1'b0;
 */
 wire [31:0] Resultado_Soma_Endereco_PC,Choice_ALU,Output_ALU,Choice_Writing;
 initial begin
-	PCin =0;
+	PCin =4;
 	Instruct_Count = 0;
 	
 end
 
 always@(posedge Clock) begin
-		$display("Branch:%b",Branch);
+	 if(Exit==1'b1)begin
+	 end
+	 else begin
+		$display("PC:%d",PCin);
 		Instruct_Count <= PCin / 32'b00000000000000000000000000000100;
-
+	 end
 end
 
 /*
@@ -81,15 +84,7 @@ Refresh_PC PC_Refresher(
 	.Clock(Clock),
 	.Reset(Reset)
 );*/
-PC Somador_PC1( //Funcao que incrementa PC por 4, ultrapassando para a proxima funcao
-   .PCin(PCin),
-   .Output(PC_Saida),
-   .Clock(Clock),
-   .Reset(Reset),
-   .Zero(Zero),
-   .Branch(Branch),
-   .imm(imm_gen)
-);
+
 
 
 
@@ -114,15 +109,26 @@ Register Regs( //Funcao de Registro que guarda os registradores e permite o aces
 	.Read_Data2(ReadData2)
 );
 
+
+
+
 always@(posedge Clock) begin
 	//$display("Branch: %b MemRead: %b MemToReg: %b MemWrite: %b ALUSrc: %b RegWrite: %b ALUOp: %b",
      //      Branch, MemRead, MemToReg, MemWrite, ALUSrc, RegWrite, ALUOp);
-	
+	 if(Exit==1'b1)begin
+	 end
+	 else begin
 		PCin <= PCin + 32'b00000000000000000000000000000100;
-	
+	 end
 	//$display(PCin);
 end
-
+always@(posedge Branch or posedge Zero)begin
+	 if(Zero)begin
+      if(Branch)begin
+		PCin<=PCin + imm_gen;
+	  end
+	 end
+end
 MUX MUX_ALU(
 	.A(ReadData2),
 	.B(imm_gen),

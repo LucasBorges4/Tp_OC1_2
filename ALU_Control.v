@@ -48,7 +48,7 @@ module ALUControl(Operation, Funct_Code, Control,Clock,Funct_3);//Recebe a Opera
             default: Control = 4'b1111; // Ilegal
         endcase
 
-//	$display("**%b-%b-%b",Operation,Funct_Code,Control);
+	//$display("**%b-%b-%b",Operation,Funct_Code,Control);
 
     end
 endmodule

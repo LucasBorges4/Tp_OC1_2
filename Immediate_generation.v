@@ -10,8 +10,8 @@ module Immediate_Generation(Input,Output,Clock);//Recebe a instrucao inteira, pe
     
      case(opcode) //Baseado no opcode sabemos onde esta o imediato da instrucao
         7'b1100011: immediate <= {Input[31:25], Input[11:7]}; // SB
-        7'b0000011: immediate <= {Input[31:20], Input[11:0]}; // LB
-        7'b0100011 : immediate <= {Input[31:25],Input[11:0]}; // S
+        7'b0000011: immediate <= {Input[31:20]}; // LB
+        7'b0100011 : immediate <= {Input[31:25],Input[11:7]}; // S
         7'b0010011 :  immediate <= Input[31:20]; // I
       
         default : immediate    <= 12'bxxxxxxxxxx; //Desconhecido

@@ -34,11 +34,11 @@ module Register(Clock,Read_Register1, Read_Register2, Reg_Write, Write_Data, Rea
 		//Registradores[Write_Register] = Write_Data; //Alteramos a posicao Write_Register do vetor para o que queremos escrever
 		//end
 	//$display("%d",Integer);
-	if(Integer == 30)begin
+	if(Integer % 100 == 0)begin
 	for(index=0; index < 32; index = index +1) begin
-	//$display ("Registrador[%0d] = %d", index, Registradores[index]); //Display do valor dos resgitradores na tela
+	$display ("Registrador[%0d] = %d", index, Registradores[index]); //Display do valor dos resgitradores na tela
 	end
-	Integer = 0;
+	
 	end
 	end
 	

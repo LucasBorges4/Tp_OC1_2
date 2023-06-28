@@ -40,7 +40,7 @@ module ALU(
             4'b0010: Out <= Input1 + Input2; // ADD
             4'b0110: Out <= Input1 - Input2; // SUB
             4'b0111: Out <= (Input1 < Input2) ? 1 : 0; // SLT
-            4'b1110: Out <= (Input1 >> Input2);
+            4'b1110: Out <= (Input1 >> Input2); //SHIFT
             4'b1100: Out <= ~(Input1 | Input2); // NOR
         endcase
     Zero = (Out == 0);
