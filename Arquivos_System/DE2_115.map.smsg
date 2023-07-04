@@ -1,6 +1,0 @@
-Warning (10268): Verilog HDL information at Verilog2.v(16): always construct contains both blocking and non-blocking assignments File: C:/Users/tarik/OneDrive/햞ea de Trabalho/Arquivos_System/Verilog2.v Line: 16
-Warning (10268): Verilog HDL information at Verilog4.v(37): always construct contains both blocking and non-blocking assignments File: C:/Users/tarik/OneDrive/햞ea de Trabalho/Arquivos_System/Verilog4.v Line: 37
-Warning (10268): Verilog HDL information at Verilog7.v(12): always construct contains both blocking and non-blocking assignments File: C:/Users/tarik/OneDrive/햞ea de Trabalho/Arquivos_System/Verilog7.v Line: 12
-Warning (10273): Verilog HDL warning at Verilog11.v(17): extended using "x" or "z" File: C:/Users/tarik/OneDrive/햞ea de Trabalho/Arquivos_System/Verilog11.v Line: 17
-Warning (10268): Verilog HDL information at Verilog11.v(9): always construct contains both blocking and non-blocking assignments File: C:/Users/tarik/OneDrive/햞ea de Trabalho/Arquivos_System/Verilog11.v Line: 9
-Warning (10268): Verilog HDL information at Verilog12.v(22): always construct contains both blocking and non-blocking assignments File: C:/Users/tarik/OneDrive/햞ea de Trabalho/Arquivos_System/Verilog12.v Line: 22
